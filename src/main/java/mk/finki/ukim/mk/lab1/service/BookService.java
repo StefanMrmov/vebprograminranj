@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface BookService{
     List<Book> listBooks();
+    void deleteauthors(String isbn);
     Author addAuthorToBook(Long authorId, String isbn);
     Book findBookByIsbn(String isbn);
 }

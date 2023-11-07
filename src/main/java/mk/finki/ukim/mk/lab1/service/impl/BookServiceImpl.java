@@ -7,6 +7,7 @@ import mk.finki.ukim.mk.lab1.repository.BookRepository;
 import mk.finki.ukim.mk.lab1.service.BookService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
@@ -20,6 +21,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> listBooks() {
        return bookRepository.findAll();
+    }
+
+    @Override
+    public void deleteauthors(String isbn) {
+         bookRepository.findByIsbn(isbn).setAuthors(new ArrayList<>());
     }
 
     @Override
